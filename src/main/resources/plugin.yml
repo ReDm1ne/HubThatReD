@@ -1,6 +1,6 @@
 name: HubThatRed
-version: ${versionName}.${buildNumber}
-author: mind_overflow
+version: ${versionName}
+author: redm1ne
 main: net.redm1ne.hubthatred.HubThatRed
 api-version: 1.21
 description: A hub/spawn management plugin for Minecraft servers
