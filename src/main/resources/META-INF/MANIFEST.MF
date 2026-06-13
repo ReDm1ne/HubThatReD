@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: HubThatRed
+Implementation-Version: 1.0.0
+Implementation-Vendor: redm1ne
+Specification-Title: HubThatRed
+Specification-Version: 1.0.0
+Specification-Vendor: redm1ne

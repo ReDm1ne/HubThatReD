@@ -1,52 +1,113 @@
-name: HubThat
+name: HubThatRed
 version: ${versionName}.${buildNumber}
 author: mind_overflow
-main: wtf.beatrice.hubthat.HubThat
-api-version: 1.13
+main: net.redm1ne.hubthatred.HubThatRed
+api-version: 1.21
+description: A hub/spawn management plugin for Minecraft servers
+website: https://github.com/redm1ne/HubThatRed
+
 commands:
   hubthat:
-    description: HubThat base command.
+    description: HubThatRed base command.
     usage: /hubthat [args]
+    aliases: [htr]
   hub:
     description: Teleport to the hub.
-    usage: /hub
+    usage: /hub [player]
+    permission: hubthat.hub
   sethub:
-    description: Set the hub.
+    description: Set the hub location.
     usage: /sethub
+    permission: hubthat.sethub
   spawn:
     description: Teleport to the spawn.
-    usage: /spawn [world]
+    usage: /spawn [world] [player]
+    permission: hubthat.spawn
   setspawn:
-    description: Set the spawn.
+    description: Set the spawn location for a world.
     usage: /setspawn [world]
+    permission: hubthat.setspawn
   worldlist:
     description: List all worlds and their info.
     usage: /worldlist
+    permission: hubthat.listworlds
+    aliases: [worlds]
   worldtp:
     description: Teleport to a specific world.
     usage: /worldtp <world>
+    permission: hubthat.gotoworld
+
 permissions:
+  hubthat.*:
+    description: Gives access to all HubThat permissions.
+    default: op
+    children:
+      hubthat.help: true
+      hubthat.reloadconfig: true
+      hubthat.nohubdelay: true
+      hubthat.sethub: true
+      hubthat.hub: true
+      hubthat.hub.others: true
+      hubthat.nospawndelay: true
+      hubthat.setspawn: true
+      hubthat.spawn: true
+      hubthat.spawn.others: true
+      hubthat.spawn.anotherworld: true
+      hubthat.gotoworld: true
+      hubthat.listworlds: true
+      hubthat.updates: true
   hubthat.help:
+    description: Access to help command.
     default: true
+
   hubthat.reloadconfig:
+    description: Access to reload config.
     default: op
+
   hubthat.nohubdelay:
+    description: Skip hub teleport delay.
     default: op
+
   hubthat.sethub:
+    description: Set the hub location.
     default: op
+
   hubthat.hub:
+    description: Teleport to hub.
     default: true
+
+  hubthat.hub.others:
+    description: Teleport others to hub.
+    default: op
+
   hubthat.nospawndelay:
+    description: Skip spawn teleport delay.
     default: op
+
   hubthat.setspawn:
+    description: Set spawn location.
     default: op
+
   hubthat.spawn:
+    description: Teleport to spawn.
     default: true
+
+  hubthat.spawn.others:
+    description: Teleport others to spawn.
+    default: op
+
   hubthat.spawn.anotherworld:
+    description: Teleport to another world's spawn.
     default: op
+
   hubthat.gotoworld:
+    description: Teleport to any world.
     default: op
+
   hubthat.listworlds:
+    description: List all worlds.
     default: op
+
   hubthat.updates:
+    description: Receive update notifications.
     default: op
